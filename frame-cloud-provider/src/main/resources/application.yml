@@ -1,0 +1,99 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
+
+spring:
+  application:
+    name: frame-cloud-provider
+  datasource:
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/frame?serverTimeZone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    druid:
+      initial-size: 20
+      min-idle: 20
+      max-active: 100
+      max-wait: 60000
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: admin
+        login-password: 12345
+      filter:
+        stat:
+          enabled: true
+          log-slow-sql: true
+          slow-sql-millis: 2000
+        wall:
+          enabled: true
+  redis:
+    enable-multi: true
+    multi:
+      default:
+        host: 127.0.0.1
+        port: 6379
+        timeout: 60000
+        lettuce:
+          pool:
+            max-active: 20
+            max-idle: 8
+            max-wait: -1
+            min-idle: 0
+      db2:
+        host: 127.0.0.1
+        port: 6379
+        timeout: 60000
+        lettuce:
+          pool:
+            max-active: 20
+            max-idle: 8
+            max-wait: -1
+            min-idle: 0
+  web:
+    resources:
+      static-locations: file:d:/file/
+  mvc:
+    static-path-pattern: /static/**
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/test
+sql:
+  beauty:
+    display: true
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: del_flag
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    banner: true
+  mapper-locations: classpath*:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+swagger:
+  base-package: com.frame
+  title: 分布式脚手架
+  contact-name:
+  contact-url:
+  contact-email:
+  version: V1.0
+  description: 分布式脚手架
+
+logging:
+  config: classpath:log4j-spring.xml
+
+log:
+  aspect:
+    enable: true

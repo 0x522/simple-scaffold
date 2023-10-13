@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>frame-dependencies</artifactId>
+        <groupId>com.frame</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath/>
+    </parent>
+
+    <artifactId>frame-common</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <description>common公用组件包</description>
+
+    <modules>
+        <module>frame-common-mongodb</module>
+        <module>frame-common-log</module>
+        <module>frame-common-web</module>
+        <module>frame-common-mybatis-plus</module>
+        <module>frame-common-redis</module>
+        <module>frame-common-swagger</module>
+        <module>frame-common-starter</module>
+        <module>frame-common-tool</module>
+        <module>frame-common-sms</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.frame</groupId>
+                <artifactId>frame-common-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.frame</groupId>
+                <artifactId>frame-common-mybatis-plus</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.frame</groupId>
+                <artifactId>frame-common-redis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.frame</groupId>
+                <artifactId>frame-common-swagger</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.frame</groupId>
+                <artifactId>frame-common-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.frame</groupId>
+                <artifactId>frame-common-log</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.frame</groupId>
+                <artifactId>frame-common-tool</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.frame</groupId>
+                <artifactId>frame-common-mongodb</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
