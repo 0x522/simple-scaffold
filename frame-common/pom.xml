@@ -25,7 +25,6 @@
         <module>frame-common-swagger</module>
         <module>frame-common-starter</module>
         <module>frame-common-tool</module>
-        <module>frame-common-sms</module>
     </modules>
 
     <dependencyManagement>
