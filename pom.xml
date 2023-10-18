@@ -11,11 +11,12 @@
 
     <modules>
         <module>frame-cloud-eureka-server</module>
-        <module>frame-cloud-provider</module>
+        <module>frame-provider</module>
         <module>frame-common</module>
         <module>frame-dependencies</module>
-        <module>frame-cloud-consumer</module>
+        <module>frame-consumer</module>
         <module>frame-cloud</module>
+        <module>frame-oss</module>
     </modules>
 
 </project>
